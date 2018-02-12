@@ -5,6 +5,7 @@ using System.Web;
 
 namespace _9Digital.Models
 {
+    //this class models the properties of the show
     public class Show
     {
         public String Country { get; set; }
@@ -13,7 +14,7 @@ namespace _9Digital.Models
         public int EpisodeCount { get; set; }
         public String Genre { get; set; }
         public String Language { get; set; }
-        public DateTime NextEpisode { get; set; }
+        public NextEpisode NextEpisode { get; set; }
         public String PrimaryColour { get; set; }
         public Season[] Seasons { get; set; }
         public String TvChannel { get; set; }
@@ -26,6 +27,7 @@ namespace _9Digital.Models
             return new ResponseShow(Image.ShowImage, Slug, Title);
         }
 
+        //creates an array of ResponseShow from the given array of Shows
         public static ResponseShow[] GetResponseShows(Show[] Shows)
         {
             ResponseShow[] ResponseShows = new ResponseShow[Shows.Length];
